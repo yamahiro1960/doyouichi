@@ -598,13 +598,130 @@ body {
 }
 
 .recruit-form-box {
-    background: white;
+    background: linear-gradient(180deg, #fffdf4 0%, #fff3db 100%);
     color: #4a3728;
-    padding: 20px;
-    border-radius: 12px;
-    max-width: 500px;
+    padding: 28px;
+    border-radius: 18px;
+    max-width: 680px;
     margin: 20px auto 0 auto;
     text-align: left;
+    border: 3px solid #f1c40f;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.recruit-form-header {
+    margin-bottom: 18px;
+}
+
+.recruit-form-kicker {
+    margin: 0 0 8px 0;
+    display: inline-block;
+    background-color: #e67e22;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 5px 12px;
+    border-radius: 999px;
+}
+
+.recruit-form-header h3 {
+    margin: 0;
+    color: #d35400;
+    font-size: 28px;
+    font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+.recruit-form-lead {
+    margin: 8px 0 0 0;
+    color: #7a5a45;
+    font-size: 14px;
+}
+
+.recruit-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+#recruit-form .form-group {
+    margin-bottom: 14px;
+}
+
+#recruit-form .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #6e4a25;
+}
+
+#recruit-form .form-group label i {
+    margin-right: 6px;
+    color: #e67e22;
+}
+
+#recruit-form input,
+#recruit-form textarea {
+    width: 100%;
+    border: 2px solid #f7d694;
+    background-color: #fffef8;
+    border-radius: 10px;
+    padding: 11px 12px;
+    font-size: 15px;
+    font-family: inherit;
+    color: #4a3728;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#recruit-form input::placeholder,
+#recruit-form textarea::placeholder {
+    color: #b48767;
+}
+
+#recruit-form input:focus,
+#recruit-form textarea:focus {
+    outline: none;
+    border-color: #f39c12;
+    box-shadow: 0 0 0 4px rgba(243, 156, 18, 0.16);
+}
+
+#recruit-form textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+.recruit-form-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    background-color: #fff9e6;
+    border: 1px dashed #f39c12;
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin: 6px 0 18px 0;
+}
+
+.recruit-form-note i {
+    margin-top: 3px;
+    color: #e67e22;
+}
+
+.recruit-form-note p {
+    margin: 0;
+    font-size: 13px;
+    color: #7a5a45;
+}
+
+.recruit-submit-btn {
+    width: 100%;
+    font-size: 17px;
+    padding: 14px 20px;
+    border-radius: 999px;
+}
+
+.recruit-submit-btn i {
+    margin-right: 6px;
 }
 
 /* --- フッター --- */
@@ -645,5 +762,18 @@ body {
     .header-container {
         flex-direction: column;
         gap: 10px;
+    }
+
+    .recruit-form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .recruit-form-box {
+        padding: 20px;
+    }
+
+    .recruit-form-header h3 {
+        font-size: 24px;
     }
 }

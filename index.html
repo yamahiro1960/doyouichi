@@ -258,25 +258,42 @@
             <button id="btn-recruit-open" class="btn-recruit-large">出店について相談してみる（お問合せ窓口）</button>
             
             <div id="recruit-form-wrapper" class="recruit-form-box hidden">
-                <h3>出店お問合せ・ご相談フォーム</h3>
+                <div class="recruit-form-header">
+                    <p class="recruit-form-kicker">土曜市ご案内窓口</p>
+                    <h3>出店お問合せ・ご相談フォーム</h3>
+                    <p class="recruit-form-lead">「まず話だけ聞いてみたい」も大歓迎です。担当より折り返しご連絡いたします。</p>
+                </div>
+
                 <form id="recruit-form">
-                    <div class="form-group">
-                        <label for="rec-name">お名前 / グループ名</label>
-                        <input type="text" id="rec-name" required placeholder="例：山田 太郎">
+                    <div class="recruit-form-grid">
+                        <div class="form-group">
+                            <label for="rec-name"><i class="fa-solid fa-user"></i> お名前 / グループ名</label>
+                            <input type="text" id="rec-name" required placeholder="例：山田 太郎">
+                        </div>
+                        <div class="form-group">
+                            <label for="rec-tel"><i class="fa-solid fa-phone"></i> お電話番号</label>
+                            <input type="tel" id="rec-tel" required placeholder="例：090-XXXX-XXXX">
+                        </div>
                     </div>
+
                     <div class="form-group">
-                        <label for="rec-tel">お電話番号</label>
-                        <input type="tel" id="rec-tel" required placeholder="例：090-XXXX-XXXX">
-                    </div>
-                    <div class="form-group">
-                        <label for="rec-genre">出店したいもの（ジャンル）</label>
+                        <label for="rec-genre"><i class="fa-solid fa-shop"></i> 出店したいもの（ジャンル）</label>
                         <input type="text" id="rec-genre" required placeholder="例：手作りのお菓子、自家製野菜など">
                     </div>
+
                     <div class="form-group">
-                        <label for="rec-message">ご質問・ご相談など</label>
-                        <textarea id="rec-message" rows="3" placeholder="出店の手順や費用について詳しく知りたい、など"></textarea>
+                        <label for="rec-message"><i class="fa-solid fa-comment-dots"></i> ご質問・ご相談など</label>
+                        <textarea id="rec-message" rows="4" placeholder="出店の手順や費用、必要な準備についてなど、お気軽にご記入ください"></textarea>
                     </div>
-                    <button type="submit" class="btn-primary">相談内容を送信する</button>
+
+                    <div class="recruit-form-note">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <p>送信内容は確認用です。実際のお手続きは担当からのご案内で確定します。</p>
+                    </div>
+
+                    <button type="submit" class="btn-primary recruit-submit-btn">
+                        <i class="fa-solid fa-paper-plane"></i> 相談内容を送信する
+                    </button>
                 </form>
             </div>
         </div>
