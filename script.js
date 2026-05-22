@@ -5,6 +5,62 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     // --------------------------------------------------------------------------
+    // 0. スマホ用ハンバーガーメニュー開閉
+    // --------------------------------------------------------------------------
+    const navToggle = document.getElementById('nav-toggle');
+    const siteNav = document.getElementById('site-nav');
+
+    if (navToggle && siteNav) {
+        const navLinks = siteNav.querySelectorAll('a');
+
+        function setMenuState(isOpen) {
+            siteNav.classList.toggle('is-open', isOpen);
+            document.body.classList.toggle('nav-open', isOpen && window.innerWidth <= 640);
+            navToggle.setAttribute('aria-expanded', String(isOpen));
+            navToggle.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
+            navToggle.innerHTML = isOpen
+                ? '<i class="fa-solid fa-xmark" aria-hidden="true"></i><span>閉じる</span>'
+                : '<i class="fa-solid fa-bars" aria-hidden="true"></i><span>メニュー</span>';
+        }
+
+        navToggle.addEventListener('click', function() {
+            setMenuState(!siteNav.classList.contains('is-open'));
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 640 && siteNav.classList.contains('is-open')) {
+                    setMenuState(false);
+                }
+            });
+        });
+
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth <= 640 && siteNav.classList.contains('is-open')) {
+                const clickedInsideMenu = siteNav.contains(e.target);
+                const clickedToggle = navToggle.contains(e.target);
+                if (!clickedInsideMenu && !clickedToggle) {
+                    setMenuState(false);
+                }
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && siteNav.classList.contains('is-open')) {
+                setMenuState(false);
+            }
+        });
+
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 640) {
+                setMenuState(false);
+            }
+        });
+
+        setMenuState(false);
+    }
+
+    // --------------------------------------------------------------------------
     // 1. 毎週自動調整される「次回の土曜市」カウントダウンタイマー（土佐弁対応版）
     // --------------------------------------------------------------------------
     function updateCountdown() {
