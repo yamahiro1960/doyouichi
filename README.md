@@ -20,6 +20,7 @@
 - 特売商品: [app.js](app.js)
 - 店舗一覧: [app.js](app.js)
 - 見た目: [styles.css](styles.css)
+- ヒーロー画像: `assets/hero-image.jpg` に画像を配置
 
 ## 補足
 

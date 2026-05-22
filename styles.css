@@ -64,7 +64,8 @@ body::before {
   border-radius: 30px;
   overflow: hidden;
   background:
-    linear-gradient(135deg, rgba(192, 80, 52, 0.9), rgba(47, 36, 27, 0.92)),
+    linear-gradient(135deg, rgba(52, 28, 17, 0.78), rgba(19, 11, 7, 0.82)),
+    url('assets/hero-image.jpg') center / cover no-repeat,
     var(--accent);
   color: #fff8eb;
   margin-top: 18px;
@@ -74,9 +75,10 @@ body::before {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 20% 20%, rgba(255, 210, 129, 0.18), transparent 28%),
-    radial-gradient(circle at 75% 10%, rgba(255, 255, 255, 0.14), transparent 22%),
-    radial-gradient(circle at 85% 80%, rgba(36, 107, 99, 0.16), transparent 24%);
+    radial-gradient(circle at 20% 20%, rgba(255, 210, 129, 0.14), transparent 28%),
+    radial-gradient(circle at 75% 10%, rgba(255, 255, 255, 0.12), transparent 22%),
+    radial-gradient(circle at 85% 80%, rgba(36, 107, 99, 0.12), transparent 24%),
+    linear-gradient(180deg, rgba(22, 14, 10, 0.18), rgba(22, 14, 10, 0.4));
 }
 
 .hero__content,
