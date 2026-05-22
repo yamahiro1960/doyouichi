@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="高知県南国市の土曜市。昭和の空気と、若い出店者やおばあちゃんの店主が混ざる、にぎやかで懐かしいローカルマーケット。"
+    />
+    <title>南国市 土曜市 - 昭和館満載のローカルマーケット</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero__backdrop"></div>
+        <div class="hero__content">
+          <p class="eyebrow">高知県南国市 / 毎週土曜日</p>
+          <h1>昭和の匂い、
+            <span>今の元気。</span>
+          </h1>
+          <p class="hero__lead">
+            魚、果物、野菜、牛乳、しきび、アクセサリー、化粧品や日用品。
+            昭和館満載の空気の中に、若い出店者の新しい風も、おばあちゃんの手仕事も並ぶ、
+            南国市の土曜市です。
+          </p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#today">今日の特売を見る</a>
+            <a class="button button--ghost" href="#join">お仲間登録する</a>
+          </div>
+          <ul class="hero__stats" aria-label="市場の特徴">
+            <li><strong>隣に大駐車場</strong><span>車で来やすい</span></li>
+            <li><strong>1日出店OK</strong><span>参加の楽しみが広い</span></li>
+            <li><strong>音楽イベント</strong><span>発表会も開催</span></li>
+          </ul>
+        </div>
+        <aside class="hero__panel">
+          <div class="signal-card">
+            <p>本日の市場だより</p>
+            <h2 id="featured-title">朝どれ鮮魚と旬野菜</h2>
+            <p id="featured-copy">売り切れ次第終了。朝のうちに立ち寄ると、いちばん旬に出会えます。</p>
+          </div>
+          <div class="signal-card signal-card--accent">
+            <p>来場メモ</p>
+            <ul>
+              <li>大きな駐車場が隣接</li>
+              <li>土曜だけの特別感</li>
+              <li>おしゃべりが楽しい屋台通り</li>
+            </ul>
+          </div>
+        </aside>
+      </header>
+
+      <main>
+        <section class="section" id="today">
+          <div class="section__head">
+            <div>
+              <p class="section__label">Today's Special</p>
+              <h2>今日の特売商品</h2>
+            </div>
+            <button class="button button--small" id="shuffleSpecials" type="button">表示を切り替える</button>
+          </div>
+          <div class="special-grid" id="specialGrid"></div>
+        </section>
+
+        <section class="section section--split" id="shops">
+          <div>
+            <div class="section__head section__head--stack">
+              <p class="section__label">Shop Lineup</p>
+              <h2>昭和の店先に、各店の個性</h2>
+              <p class="section__text">
+                定番の食材店から、少し意外な手作り雑貨まで。どの店も、顔が見える距離で楽しめます。
+              </p>
+            </div>
+            <div class="filters" role="tablist" aria-label="店舗カテゴリ">
+              <button class="chip is-active" data-filter="all" type="button">全部</button>
+              <button class="chip" data-filter="food" type="button">食材</button>
+              <button class="chip" data-filter="craft" type="button">手仕事</button>
+              <button class="chip" data-filter="daily" type="button">日用品</button>
+              <button class="chip" data-filter="season" type="button">季節物</button>
+            </div>
+            <div class="shop-grid" id="shopGrid"></div>
+          </div>
+          <aside class="side-note">
+            <h3>出店の顔ぶれ</h3>
+            <p>
+              魚屋さん、化粧品や雑貨の店、しきび屋さん、アクセサリー屋さん、果物屋さん、野菜屋さん、牛乳屋さん。
+              若い出店者もいれば、長年店を守るおばあちゃんもいて、会話そのものが市場の魅力です。
+            </p>
+            <div class="mini-card">
+              <strong>1日出店も歓迎</strong>
+              <span>「やってみたい」を試しやすい市場です。</span>
+            </div>
+          </aside>
+        </section>
+
+        <section class="section" id="events">
+          <div class="section__head">
+            <div>
+              <p class="section__label">Events</p>
+              <h2>音楽と発表会、時々いつもより賑やか</h2>
+            </div>
+          </div>
+          <div class="timeline" id="eventTimeline"></div>
+        </section>
+
+        <section class="section section--media">
+          <div>
+            <div class="section__head section__head--stack">
+              <p class="section__label">Short Videos</p>
+              <h2>お店のショート動画で、空気感を先取り</h2>
+              <p class="section__text">
+                まだ来たことがない人にも雰囲気が伝わるように、店先のひとこまを短く見せる場所です。
+                動画を公開して、市場の日常をもっと近くに届けます。
+              </p>
+            </div>
+            <div class="video-strip" id="videoStrip"></div>
+          </div>
+          <aside class="side-note side-note--stack">
+            <h3>このページでやりたいこと</h3>
+            <ul class="check-list">
+              <li>今日の特売をタイムリーに見せる</li>
+              <li>短い動画でお店の温度を伝える</li>
+              <li>イベント情報をすぐ更新する</li>
+              <li>お仲間登録でお知らせを届ける</li>
+            </ul>
+          </aside>
+        </section>
+
+        <section class="section section--join" id="join">
+          <div class="join-card">
+            <div>
+              <p class="section__label">Join Us</p>
+              <h2>お仲間登録で、最新情報を受け取る</h2>
+              <p class="section__text">
+                特売、イベント、1日出店の募集などを受け取れる登録フォームです。
+                まずは気軽に、名前だけでも歓迎します。
+              </p>
+            </div>
+            <form class="join-form" id="joinForm">
+              <label>
+                お名前
+                <input name="name" type="text" placeholder="南国 花子" required />
+              </label>
+              <label>
+                メールアドレス
+                <input name="email" type="email" placeholder="hanako@example.com" required />
+              </label>
+              <label>
+                興味のある情報
+                <select name="interest">
+                  <option>今日の特売</option>
+                  <option>イベント情報</option>
+                  <option>1日出店募集</option>
+                  <option>ショート動画更新</option>
+                </select>
+              </label>
+              <button class="button button--primary" type="submit">登録する</button>
+              <p class="form-status" id="joinStatus" aria-live="polite"></p>
+            </form>
+          </div>
+        </section>
+
+        <section class="section section--chat" id="contact">
+          <div class="section__head section__head--stack">
+            <p class="section__label">Market Chat</p>
+            <h2>お店の方とのおしゃべりが、いちばんの楽しみ</h2>
+            <p class="section__text">
+              取材や問い合わせ、出店相談もここから。市場の雰囲気に合わせて、気軽に話しかけるような導線にしています。
+            </p>
+          </div>
+          <div class="chat-layout">
+            <div class="chat-bubble chat-bubble--market">今日は何がおすすめ？</div>
+            <div class="chat-bubble chat-bubble--response">朝どれの魚と、旬の果物がいいよ。</div>
+            <div class="chat-bubble chat-bubble--market">1日だけでも出店できる？</div>
+            <div class="chat-bubble chat-bubble--response">もちろん。まずは相談からどうぞ。</div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <p>南国市土曜市 - 昭和館満載だけど、今も動いている市場。</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
