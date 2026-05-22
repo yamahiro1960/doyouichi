@@ -1,194 +1,277 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="高知県南国市の土曜市。昭和の空気と、若い出店者やおばあちゃんの店主が混ざる、にぎやかで懐かしいローカルマーケット。"
-    />
-    <title>南国市 土曜市 - 昭和館満載のローカルマーケット</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="page-shell">
-      <header class="hero">
-        <div class="hero__backdrop"></div>
-        <div class="hero__content">
-          <p class="eyebrow">高知県南国市 / 毎週土曜日</p>
-          <h1>昭和の匂い、
-            <span>今の元気。</span>
-          </h1>
-          <p class="hero__lead">
-            魚、果物、野菜、牛乳、しきび、アクセサリー、化粧品や日用品。
-            昭和館満載の空気の中に、若い出店者の新しい風も、おばあちゃんの手仕事も並ぶ、
-            南国市の土曜市です。
-          </p>
-          <div class="hero__actions">
-            <a class="button button--primary" href="#today">今日の特売を見る</a>
-            <a class="button button--ghost" href="#join">お仲間登録する</a>
-          </div>
-          <ul class="hero__stats" aria-label="市場の特徴">
-            <li><strong>隣に大駐車場</strong><span>車で来やすい</span></li>
-            <li><strong>1日出店OK</strong><span>参加の楽しみが広い</span></li>
-            <li><strong>音楽イベント</strong><span>発表会も開催</span></li>
-          </ul>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>南国市 土曜市 【公式ホームページ】 - 人と出会う、ぬくもり朝市</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-family/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-area">
+                <span class="logo-sub">むかしも、いまも、これからも。</span>
+                <h1 class="logo-title">南国市 <span class="highlight">土曜市</span></h1>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#about"><i class="fa-solid fa-heart"></i> 土曜市とは</a></li>
+                    <li><a href="#shops"><i class="fa-solid fa-store"></i> お店紹介</a></li>
+                    <li><a href="#events"><i class="fa-solid fa-calendar-days"></i> イベント</a></li>
+                    <li><a href="#stamp-rally"><i class="fa-solid fa-star"></i> お楽しみ</a></li>
+                    <li><a href="#access"><i class="fa-solid fa-map-location-dot"></i> アクセス</a></li>
+                    <li><a href="#recruit" class="btn-recruit-nav">出店者募集中！</a></li>
+                </ul>
+            </nav>
         </div>
-        <aside class="hero__panel">
-          <div class="signal-card">
-            <p>本日の市場だより</p>
-            <h2 id="featured-title">朝どれ鮮魚と旬野菜</h2>
-            <p id="featured-copy">売り切れ次第終了。朝のうちに立ち寄ると、いちばん旬に出会えます。</p>
-          </div>
-          <div class="signal-card signal-card--accent">
-            <p>来場メモ</p>
-            <ul>
-              <li>大きな駐車場が隣接</li>
-              <li>土曜だけの特別感</li>
-              <li>おしゃべりが楽しい屋台通り</li>
-            </ul>
-          </div>
-        </aside>
-      </header>
+    </header>
 
-      <main>
-        <section class="section" id="today">
-          <div class="section__head">
-            <div>
-              <p class="section__label">Today's Special</p>
-              <h2>今日の特売商品</h2>
+    <section class="hero-section">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h2>笑顔に会える、土曜日の朝。</h2>
+                <p class="hero-desc">高知県南国市で長年愛されてきた、ぬくもりあふれる土曜市へようこそ！<br>採れたて野菜やお魚、美味しいおやつ、手芸品までワクワクが詰まっています。</p>
+                
+                <div class="countdown-container">
+                    <h3 id="countdown-status">次回の土曜市スタートまで</h3>
+                    <div class="timer-display">
+                        <div class="timer-box"><span id="days">0</span><span class="unit">日</span></div>
+                        <div class="timer-box"><span id="hours">00</span><span class="unit">時間</span></div>
+                        <div class="timer-box"><span id="minutes">00</span><span class="unit">分</span></div>
+                        <div class="timer-box"><span id="seconds">00</span><span class="unit">秒</span></div>
+                    </div>
+                    <p class="time-info"><i class="fa-solid fa-clock"></i> 毎週土曜日 朝 6:00 ～ お昼12:00頃まで開催中！</p>
+                </div>
             </div>
-            <button class="button button--small" id="shuffleSpecials" type="button">表示を切り替える</button>
-          </div>
-          <div class="special-grid" id="specialGrid"></div>
-        </section>
+        </div>
+    </section>
 
-        <section class="section section--split" id="shops">
-          <div>
-            <div class="section__head section__head--stack">
-              <p class="section__label">Shop Lineup</p>
-              <h2>昭和の店先に、各店の個性</h2>
-              <p class="section__text">
-                定番の食材店から、少し意外な手作り雑貨まで。どの店も、顔が見える距離で楽しめます。
-              </p>
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>土曜市のおはなし</h2>
+                <p>昔から変わらない、地域の笑顔がつながる場所</p>
             </div>
-            <div class="filters" role="tablist" aria-label="店舗カテゴリ">
-              <button class="chip is-active" data-filter="all" type="button">全部</button>
-              <button class="chip" data-filter="food" type="button">食材</button>
-              <button class="chip" data-filter="craft" type="button">手仕事</button>
-              <button class="chip" data-filter="daily" type="button">日用品</button>
-              <button class="chip" data-filter="season" type="button">季節物</button>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>「いいもの」と「ありがとう」が行き交う朝市</h3>
+                    <p>南国市の土曜市は、昔から多くの地域の人々に愛され、利用されてきました。単にお買い物をする場所ではなく、「最近どうね？」「この野菜はこうやって食べたら美味しいき！」といった、お店の人やお客さん同士の温かいおしゃべりと交流が楽しめる親しみのある市場です。</p>
+                    <p>近年、少し出店者や買い物客が少なくなってきていますが、私たちはこの素敵な「地域の宝物」を次の世代へ繋いでいきたいと考えています。新しく来てくれる方も、昔からの常連さんも、みんなが笑顔になれる土曜市へ、ぜひ遊びに来てください！</p>
+                    <div class="badge-container">
+                        <span class="badge"><i class="fa-solid fa-car"></i> 広い駐車場あり（無料）</span>
+                        <span class="badge"><i class="fa-solid fa-child"></i> 子どもからシニアまで大歓迎</span>
+                    </div>
+                </div>
             </div>
-            <div class="shop-grid" id="shopGrid"></div>
-          </div>
-          <aside class="side-note">
-            <h3>出店の顔ぶれ</h3>
-            <p>
-              魚屋さん、化粧品や雑貨の店、しきび屋さん、アクセサリー屋さん、果物屋さん、野菜屋さん、牛乳屋さん。
-              若い出店者もいれば、長年店を守るおばあちゃんもいて、会話そのものが市場の魅力です。
-            </p>
-            <div class="mini-card">
-              <strong>1日出店も歓迎</strong>
-              <span>「やってみたい」を試しやすい市場です。</span>
-            </div>
-          </aside>
-        </section>
+        </div>
+    </section>
 
-        <section class="section" id="events">
-          <div class="section__head">
-            <div>
-              <p class="section__label">Events</p>
-              <h2>音楽と発表会、時々いつもより賑やか</h2>
+    <section id="shops" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>おしゃべり店主のお店紹介</h2>
+                <p>お店の名前をタップすると、店主からの自慢の一言メッセージが見られるよ！</p>
             </div>
-          </div>
-          <div class="timeline" id="eventTimeline"></div>
-        </section>
 
-        <section class="section section--media">
-          <div>
-            <div class="section__head section__head--stack">
-              <p class="section__label">Short Videos</p>
-              <h2>お店のショート動画で、空気感を先取り</h2>
-              <p class="section__text">
-                まだ来たことがない人にも雰囲気が伝わるように、店先のひとこまを短く見せる場所です。
-                動画を公開して、市場の日常をもっと近くに届けます。
-              </p>
+            <div class="shop-interactive-layout">
+                <div class="shop-display-card">
+                    <div class="speech-bubble">
+                        <p id="shop-message">「いらっしゃい！上のボタンからお店を選んでみてね。自慢の品とおしゃべりを用意して待っちゅうよ！」</p>
+                    </div>
+                    <div class="display-owner-info">
+                        <div class="owner-avatar" id="owner-avatar">
+                            <i class="fa-solid fa-store-asterisk"></i>
+                        </div>
+                        <div>
+                            <h3 id="owner-shop-name">南国土曜市のみんな</h3>
+                            <p id="owner-name">店主一同</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shop-grid">
+                    <button class="shop-btn active" data-shop="fish" data-owner="魚正（うおまさ）さん" data-name="正さん" data-msg="「毎朝仕入れる新鮮な魚が自慢やき！今日のおすすめはピチピチのタタキ！美味しい食べ方も教えるきね！」" data-icon="fa-fish">
+                        <i class="fa-solid fa-fish"></i> お魚屋さん
+                    </button>
+                    <button class="shop-btn" data-shop="dry" data-owner="浜口干物店" data-name="おばちゃん" data-msg="「じっくり干した旨味たっぷりの干物！あぶって食べたら最高のおかずになるき。おまけしちゃうかも！？」" data-icon="fa-shrimp">
+                        <i class="fa-solid fa-shrimp"></i> 干物屋さん
+                    </button>
+                    <button class="shop-btn" data-shop="veg" data-owner="南国新鮮ベジタブル" data-name="山中さん" data-msg="「今朝畑から採ってきたばかりの瑞々しい野菜ながよ！無農薬で安心、子どもらあにもいっぱい食べてほしいねぇ。」" data-icon="fa-carrot">
+                        <i class="fa-solid fa-carrot"></i> 野菜屋さん
+                    </button>
+                    <button class="shop-btn" data-shop="fruit" data-owner="くだもの屋 正ちゃん" data-name="正ちゃん" data-msg="「南国の太陽を浴びた甘〜い果物！今の時期はみかんや文旦がおすすめ。ビタミンいっぱいやき！」" data-icon="fa-apple-whole">
+                        <i class="fa-solid fa-apple-whole"></i> くだもの屋さん
+                    </button>
+                    <button class="shop-btn" data-shop="accessory" data-owner="工房きらり" data-name="アキさん" data-msg="「ひとつひとつ心を込めて作ったハンドメイドアクセサリー。あなただけのお気に入りを見つけてみん？」" data-icon="fa-gem">
+                        <i class="fa-solid fa-gem"></i> アクセサリー屋さん
+                    </button>
+                    <button class="shop-btn" data-shop="handcraft" data-owner="ぬくもり手芸" data-name="よしこさん" data-msg="「手編みのバッグや可愛い小物が並んでるよ。手仕事の温かさを手にとって感じてみてくださいね。」" data-icon="fa-scissors">
+                        <i class="fa-solid fa-scissors"></i> 手芸屋さん
+                    </button>
+                    <button class="shop-btn" data-shop="taiyaki" data-owner="一期一会たい焼き" data-name="大将" data-msg="「外はカリッ、中はあんこがぎっしりのたい焼き！焼きたてアツアツを食べて、お腹も心も満たされてや！」" data-icon="fa-hotdog">
+                        <i class="fa-solid fa-hotdog"></i> たい焼き屋さん
+                    </button>
+                    <button class="shop-btn" data-shop="shikibi" data-owner="前田しきび・お供え花" data-name="前田さん" data-msg="「地元で大切に育てた、きれいで長持ちする『しきび』や仏花を取り揃えちゅうよ。ご先祖様のお供えにどうぞ。」" data-icon="fa-leaf">
+                        <i class="fa-solid fa-leaf"></i> しきび屋さん
+                    </button>
+                    <button class="shop-btn" data-shop="milk" data-owner="南国ミルクスタンド" data-name="ケンちゃん" data-msg="「地元の牧場から直送の新鮮牛乳と濃厚ソフトクリーム！お買い物帰りのちょっと一息にぴったりやき！」" data-icon="fa-glass-water">
+                        <i class="fa-solid fa-glass-water"></i> 牛乳屋さん
+                    </button>
+                </div>
             </div>
-            <div class="video-strip" id="videoStrip"></div>
-          </div>
-          <aside class="side-note side-note--stack">
-            <h3>このページでやりたいこと</h3>
-            <ul class="check-list">
-              <li>今日の特売をタイムリーに見せる</li>
-              <li>短い動画でお店の温度を伝える</li>
-              <li>イベント情報をすぐ更新する</li>
-              <li>お仲間登録でお知らせを届ける</li>
-            </ul>
-          </aside>
-        </section>
+        </div>
+    </section>
 
-        <section class="section section--join" id="join">
-          <div class="join-card">
-            <div>
-              <p class="section__label">Join Us</p>
-              <h2>お仲間登録で、最新情報を受け取る</h2>
-              <p class="section__text">
-                特売、イベント、1日出店の募集などを受け取れる登録フォームです。
-                まずは気軽に、名前だけでも歓迎します。
-              </p>
+    <section id="events" class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>にぎやかイベント情報</h2>
+                <p>地域の小学生による発表や、地元音楽ユニットのライブなどワクワクがいっぱい！</p>
             </div>
-            <form class="join-form" id="joinForm">
-              <label>
-                お名前
-                <input name="name" type="text" placeholder="南国 花子" required />
-              </label>
-              <label>
-                メールアドレス
-                <input name="email" type="email" placeholder="hanako@example.com" required />
-              </label>
-              <label>
-                興味のある情報
-                <select name="interest">
-                  <option>今日の特売</option>
-                  <option>イベント情報</option>
-                  <option>1日出店募集</option>
-                  <option>ショート動画更新</option>
-                </select>
-              </label>
-              <button class="button button--primary" type="submit">登録する</button>
-              <p class="form-status" id="joinStatus" aria-live="polite"></p>
-            </form>
-          </div>
-        </section>
+            <div class="event-showcase">
+                <div class="event-card">
+                    <div class="event-tag badge-green">定期開催</div>
+                    <div class="event-body">
+                        <h3><i class="fa-solid fa-graduation-cap"></i> 地元小学生の元気発表ステージ</h3>
+                        <p>地域の小学生たちが、学校や地域で学んだことの発表や、元気いっぱいの合唱・合奏を披露してくれます！子どもたちの頑張る姿に、会場全体が温かい拍手で包まれます。</p>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-tag badge-orange">不定期開催</div>
+                    <div class="event-body">
+                        <h3><i class="fa-solid fa-music"></i> 郷土音楽ユニット アコースティックライブ</h3>
+                        <p>南国市を中心に活動するアコースティックバンドや音楽ユニットが、懐かしい名曲からオリジナルソングまでを演奏。心地よい音楽を聴きながら、のんびり朝市を楽しめます。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section class="section section--chat" id="contact">
-          <div class="section__head section__head--stack">
-            <p class="section__label">Market Chat</p>
-            <h2>お店の方とのおしゃべりが、いちばんの楽しみ</h2>
-            <p class="section__text">
-              取材や問い合わせ、出店相談もここから。市場の雰囲気に合わせて、気軽に話しかけるような導線にしています。
-            </p>
-          </div>
-          <div class="chat-layout">
-            <div class="chat-bubble chat-bubble--market">今日は何がおすすめ？</div>
-            <div class="chat-bubble chat-bubble--response">朝どれの魚と、旬の果物がいいよ。</div>
-            <div class="chat-bubble chat-bubble--market">1日だけでも出店できる？</div>
-            <div class="chat-bubble chat-bubble--response">もちろん。まずは相談からどうぞ。</div>
-          </div>
-        </section>
-      </main>
-    </div>
+    <section id="stamp-rally" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>バーチャル土曜市スタンプラリー</h2>
+                <p>ホームページ上でお店を３つ巡ってスタンプを集めよう！すべて集めると、実際の土曜市で使えるお楽しみクーポン（デモ）が表示されます🎁</p>
+            </div>
+            <div class="rally-box">
+                <div class="stamp-slots">
+                    <div class="stamp-slot" id="slot-1"><i class="fa-solid fa-circle-check unchecked"></i><p>1店目</p></div>
+                    <div class="stamp-slot" id="slot-2"><i class="fa-solid fa-circle-check unchecked"></i><p>2店目</p></div>
+                    <div class="stamp-slot" id="slot-3"><i class="fa-solid fa-circle-check unchecked"></i><p>3店目</p></div>
+                </div>
+                <div class="rally-action">
+                    <button id="btn-get-stamp" class="btn-primary"><i class="fa-solid fa-stamp"></i> お店を巡ってスタンプを押す</button>
+                    <p id="rally-status-text" style="margin-top: 15px; font-weight: bold; color: #d35400;">ボタンを押してスタンプをあつめよう！</p>
+                </div>
+                <div id="coupon-display" class="coupon-card hidden">
+                    <div class="coupon-inner">
+                        <span class="coupon-badge">スタンプ達成特典</span>
+                        <h3>土曜市お楽しみクーポン券</h3>
+                        <p class="coupon-benefit">★ 出店店舗どこでも使える「50円引き」または「おまけ」プレゼント！</p>
+                        <p class="coupon-notice">※実際の土曜市本部、または各店舗の店主さんにこの画面を見せてね！（デモ画面）</p>
+                        <div class="coupon-code">CODE: NANKOKU-SAT-MARKET</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <footer class="footer">
-      <p>南国市土曜市 - 昭和館満載だけど、今も動いている市場。</p>
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>みんなの応援掲示板</h2>
+                <p>土曜市への応援メッセージや、お買い物の感想を自由に書き込んでね！</p>
+            </div>
+            <div class="bbs-container">
+                <form id="bbs-form" class="bbs-form">
+                    <input type="text" id="bbs-name" placeholder="お名前（ニックネーム可）" required>
+                    <textarea id="bbs-comment" placeholder="「たい焼き美味しかった！」「応援してます！」など、温かいメッセージをお待ちしています" rows="3" required></textarea>
+                    <button type="submit" class="btn-secondary">メッセージを投稿する</button>
+                </form>
+                <div class="bbs-list" id="bbs-list">
+                    <div class="bbs-item">
+                        <div class="bbs-meta"><strong>ひろくんママ</strong> <span>たった今</span></div>
+                        <p>子どもと一緒にいつもたい焼きを食べに行っています！お店のおんちゃんとおしゃべりするのが毎週の楽しみです。</p>
+                    </div>
+                    <div class="bbs-item">
+                        <div class="bbs-meta"><strong>南国ファン</strong> <span>1日前</span></div>
+                        <p>ここの干物は本当に絶品！お魚屋さんのタタキも新鮮で、土曜市がある週末がいつも待ち遠しいです。応援しています！</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="access" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>アクセスと駐車場のご案内</h2>
+                <p>「大きな広い無料駐車場」完備！お車で安心してお越しいただけます</p>
+            </div>
+            <div class="access-grid">
+                <div class="access-info-box">
+                    <table class="info-table">
+                        <tr>
+                            <th><i class="fa-solid fa-location-dot"></i> 開催場所</th>
+                            <td>高知県南国市 土曜市特設会場<br><span class="small-text">（※詳細な地域住所や広場名をここに記載）</span></td>
+                        </tr>
+                        <tr>
+                            <th><i class="fa-solid fa-calendar-days"></i> 開催日時</th>
+                            <td>毎週土曜日 朝 6:00 ～ お昼 12:00頃まで<br><span class="small-text">※雨天決行（荒天を除く）、商品がなくなり次第終了となるお店もあります</span></td>
+                        </tr>
+                        <tr>
+                            <th><i class="fa-solid fa-car"></i> 駐車場</th>
+                            <td><strong>大きな広い無料駐車場を完備！</strong><br>何台でもゆったり停められる広さですので、遠方からのドライブやファミリーでのご来場も安心です。</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="recruit" class="section-padding recruit-banner">
+        <div class="container text-center">
+            <h2>✨ 新しい出店者さん（仲間）を大募集！ ✨</h2>
+            <p class="recruit-lead">南国市土曜市を一緒に盛り上げてくれる方を募集しています。お野菜、お惣菜、手芸品、フリーマーケットなど、あなた自慢の品を並べてみませんか？お店の人やお客さんとの温かい交流が待っています！</p>
+            <div class="recruit-benefits">
+                <div class="benefit-item"><i class="fa-solid fa-face-smile-wink"></i> 初心者大歓迎！</div>
+                <div class="benefit-item"><i class="fa-solid fa-handshake"></i> 抜群の地域交流</div>
+                <div class="benefit-item"><i class="fa-solid fa-circle-dollar-to-slot"></i> 出店料などお気軽にご相談</div>
+            </div>
+            <button id="btn-recruit-open" class="btn-recruit-large">出店について相談してみる（お問合せ窓口）</button>
+            
+            <div id="recruit-form-wrapper" class="recruit-form-box hidden">
+                <h3>出店お問合せ・ご相談フォーム</h3>
+                <form id="recruit-form">
+                    <div class="form-group">
+                        <label for="rec-name">お名前 / グループ名</label>
+                        <input type="text" id="rec-name" required placeholder="例：山田 太郎">
+                    </div>
+                    <div class="form-group">
+                        <label for="rec-tel">お電話番号</label>
+                        <input type="tel" id="rec-tel" required placeholder="例：090-XXXX-XXXX">
+                    </div>
+                    <div class="form-group">
+                        <label for="rec-genre">出店したいもの（ジャンル）</label>
+                        <input type="text" id="rec-genre" required placeholder="例：手作りのお菓子、自家製野菜など">
+                    </div>
+                    <div class="form-group">
+                        <label for="rec-message">ご質問・ご相談など</label>
+                        <textarea id="rec-message" rows="3" placeholder="出店の手順や費用について詳しく知りたい、など"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">相談内容を送信する</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 南国市 土曜市 活性化プロジェクト. All Rights Reserved.</p>
+        <p class="footer-sub">このホームページは、南国市土曜市の魅力発信と買い物客・出店者増加のために運営されています。</p>
     </footer>
 
-    <script src="app.js"></script>
-  </body>
+    <script src="script.js"></script>
+</body>
 </html>
