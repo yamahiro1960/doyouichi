@@ -10,8 +10,8 @@
 body {
     margin: 0;
     padding: 0;
-    /* 全体を手書き風・丸文字の温かみのあるフォントへ設定 */
-    font-family: 'Kiwi Maru', 'Zen Maru Gothic', sans-serif;
+    /* 本文は読みやすい丸ゴシックを基準にする */
+    font-family: 'Zen Maru Gothic', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
     color: #4a3728; /* 少し柔らかいブラウン */
     background-color: #fffdf4; /* 優しいクリーム色 */
     line-height: 1.6;
@@ -55,6 +55,18 @@ body {
 .section-title p {
     font-size: 16px;
     color: #8c7662;
+}
+
+/* タイトル・サブタイトルは手書き風の Yusei Magic で統一 */
+.logo-sub,
+.logo-title,
+.logo-desc-sub,
+.section-title h2,
+.section-title p,
+.main-catch,
+.countdown-card-wrapper h3,
+.recruit-form-header h3 {
+    font-family: 'Yusei Magic', 'Zen Maru Gothic', sans-serif;
 }
 
 /* --- ボタン共通スタイル --- */
@@ -118,7 +130,6 @@ body {
     margin: 0;
     font-size: 28px;
     color: #d35400;
-    font-family: 'Zen Maru Gothic', sans-serif;
     font-weight: bold;
 }
 
@@ -246,7 +257,6 @@ body {
 }
 
 .main-catch {
-    font-family: 'Zen Maru Gothic', sans-serif;
     font-size: 46px;
     color: #6e4a25;
     line-height: 1.3;
@@ -333,7 +343,6 @@ body {
     margin: 0 0 20px 0;
     color: #d35400;
     font-size: 20px;
-    font-family: 'Zen Maru Gothic', sans-serif;
 }
 
 /* カウントダウン丸デザイン */
@@ -659,7 +668,6 @@ body {
     margin: 0;
     color: #d35400;
     font-size: 28px;
-    font-family: 'Zen Maru Gothic', sans-serif;
 }
 
 .recruit-form-lead {
