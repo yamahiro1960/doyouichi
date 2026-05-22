@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>南国市 土曜市 【公式ホームページ】 - 人と出会う、ぬくもり朝市</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-family/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500&family=Mochiay+Pop+One&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
@@ -14,37 +17,58 @@
             <div class="logo-area">
                 <span class="logo-sub">むかしも、いまも、これからも。</span>
                 <h1 class="logo-title">南国市 <span class="highlight">土曜市</span></h1>
+                <p class="logo-desc-sub">昔から続く、笑顔と会話の青空市場</p>
             </div>
             <nav class="nav-menu">
                 <ul>
-                    <li><a href="#about"><i class="fa-solid fa-heart"></i> 土曜市とは</a></li>
-                    <li><a href="#shops"><i class="fa-solid fa-store"></i> お店紹介</a></li>
-                    <li><a href="#events"><i class="fa-solid fa-calendar-days"></i> イベント</a></li>
-                    <li><a href="#stamp-rally"><i class="fa-solid fa-star"></i> お楽しみ</a></li>
-                    <li><a href="#access"><i class="fa-solid fa-map-location-dot"></i> アクセス</a></li>
-                    <li><a href="#recruit" class="btn-recruit-nav">出店者募集中！</a></li>
+                    <li><a href="#about">土曜市とは</a></li>
+                    <li><a href="#shops">お店の人紹介</a></li>
+                    <li><a href="#stamp-rally"><span class="emoji">🎁</span> ミニゲーム</a></li>
+                    <li><a href="#events">楽しいイベント</a></li>
+                    <li><a href="#access">アクセス・駐車場</a></li>
+                    <li><a href="#recruit" class="btn-recruit-nav"><span class="emoji">🏪</span> 出店しませんか？</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <section class="hero-section">
-        <div class="hero-overlay">
-            <div class="hero-content">
-                <h2>笑顔に会える、土曜日の朝。</h2>
-                <p class="hero-desc">高知県南国市で長年愛されてきた、ぬくもりあふれる土曜市へようこそ！<br>採れたて野菜やお魚、美味しいおやつ、手芸品までワクワクが詰まっています。</p>
-                
-                <div class="countdown-container">
-                    <h3 id="countdown-status">次回の土曜市スタートまで</h3>
-                    <div class="timer-display">
-                        <div class="timer-box"><span id="days">0</span><span class="unit">日</span></div>
-                        <div class="timer-box"><span id="hours">00</span><span class="unit">時間</span></div>
-                        <div class="timer-box"><span id="minutes">00</span><span class="unit">分</span></div>
-                        <div class="timer-box"><span id="seconds">00</span><span class="unit">秒</span></div>
-                    </div>
-                    <p class="time-info"><i class="fa-solid fa-clock"></i> 毎週土曜日 朝 6:00 ～ お昼12:00頃まで開催中！</p>
+        <div class="hero-container-layout">
+            
+            <div class="hero-left">
+                <div class="badge-history">高知県南国市で愛されて◯十年！</div>
+                <h2 class="main-catch">今日も笑顔で、<br>「売り手と買い手」の<br><span class="underline-deco">温かいおしゃべり。</span></h2>
+                <p class="hero-intro-text">
+                    お魚、干物、新鮮野菜、くだもの、手作りアクセサリー、しきび、あつあつのたい焼きまで！<br>
+                    南国市の土曜市は、人と人の温かい交流が生まれる、地域みんなの憩いの青空市場です。
+                </p>
+                <div class="hero-buttons">
+                    <a href="#shops" class="btn-hero-orange"><i class="fa-solid fa-comments"></i> 店主さんたちとおしゃべりする</a>
+                    <a href="#access" class="btn-hero-white"><i class="fa-solid fa-p"></i> 広い駐車場あり！場所を見る</a>
                 </div>
             </div>
+
+            <div class="hero-right">
+                <div class="countdown-card-wrapper">
+                    <span class="badge-time-tag">毎週土曜 朝6:00～昼頃まで</span>
+                    <h3 id="countdown-status"><span class="emoji">⏰</span> 次回の土曜市まで</h3>
+                    
+                    <div class="timer-flex-display">
+                        <div class="timer-circle-box"><span id="days">00</span><p class="unit">日</p></div>
+                        <div class="timer-circle-box"><span id="hours">00</span><p class="unit">時間</p></div>
+                        <div class="timer-circle-box"><span id="minutes">00</span><p class="unit">分</p></div>
+                        <div class="timer-circle-box-seconds"><span id="seconds">00</span><p class="unit">秒</p></div>
+                    </div>
+                    
+                    <p id="live-status-message" class="live-message">⏰ カウントダウン中</p>
+                    
+                    <div class="quick-info-list">
+                        <p class="info-item"><span class="pin-emoji">📍</span> 高知県南国市大そね甲（南国警察署北側広場）</p>
+                        <p class="info-item"><span class="car-emoji">🚗</span> <strong>大駐車スペースあり（お買い物中、無料！）</strong></p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -57,12 +81,8 @@
             <div class="about-grid">
                 <div class="about-text">
                     <h3>「いいもの」と「ありがとう」が行き交う朝市</h3>
-                    <p>南国市の土曜市は、昔から多くの地域の人々に愛され、利用されてきました。単にお買い物をする場所ではなく、「最近どうね？」「この野菜はこうやって食べたら美味しいき！」といった、お店の人やお客さん同士の温かいおしゃべりと交流が楽しめる親しみのある市場です。</p>
+                    <p>南国市大そね甲の南国警察署北側広場にて、古くから開催されている土曜市。単にお買い物をする場所ではなく、「最近どうね？」「この野菜はこうやって食べたら美味しいき！」といった、お店の人やお客さん同士の温かいおしゃべりと交流が楽しめる親しみのある市場です。</p>
                     <p>近年、少し出店者や買い物客が少なくなってきていますが、私たちはこの素敵な「地域の宝物」を次の世代へ繋いでいきたいと考えています。新しく来てくれる方も、昔からの常連さんも、みんなが笑顔になれる土曜市へ、ぜひ遊びに来てください！</p>
-                    <div class="badge-container">
-                        <span class="badge"><i class="fa-solid fa-car"></i> 広い駐車場あり（無料）</span>
-                        <span class="badge"><i class="fa-solid fa-child"></i> 子どもからシニアまで大歓迎</span>
-                    </div>
                 </div>
             </div>
         </div>
@@ -78,7 +98,7 @@
             <div class="shop-interactive-layout">
                 <div class="shop-display-card">
                     <div class="speech-bubble">
-                        <p id="shop-message">「いらっしゃい！上のボタンからお店を選んでみてね。自慢の品とおしゃべりを用意して待っちゅうよ！」</p>
+                        <p id="shop-message">「いらっしゃい！右側（スマホは下）のボタンからお店を選んでみてね。自慢の品とおしゃべりを用意して待っちゅうよ！」</p>
                     </div>
                     <div class="display-owner-info">
                         <div class="owner-avatar" id="owner-avatar">
@@ -124,36 +144,11 @@
         </div>
     </section>
 
-    <section id="events" class="section-padding">
-        <div class="container">
-            <div class="section-title">
-                <h2>にぎやかイベント情報</h2>
-                <p>地域の小学生による発表や、地元音楽ユニットのライブなどワクワクがいっぱい！</p>
-            </div>
-            <div class="event-showcase">
-                <div class="event-card">
-                    <div class="event-tag badge-green">定期開催</div>
-                    <div class="event-body">
-                        <h3><i class="fa-solid fa-graduation-cap"></i> 地元小学生の元気発表ステージ</h3>
-                        <p>地域の小学生たちが、学校や地域で学んだことの発表や、元気いっぱいの合唱・合奏を披露してくれます！子どもたちの頑張る姿に、会場全体が温かい拍手で包まれます。</p>
-                    </div>
-                </div>
-                <div class="event-card">
-                    <div class="event-tag badge-orange">不定期開催</div>
-                    <div class="event-body">
-                        <h3><i class="fa-solid fa-music"></i> 郷土音楽ユニット アコースティックライブ</h3>
-                        <p>南国市を中心に活動するアコースティックバンドや音楽ユニットが、懐かしい名曲からオリジナルソングまでを演奏。心地よい音楽を聴きながら、のんびり朝市を楽しめます。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="stamp-rally" class="section-padding bg-light">
+    <section id="stamp-rally" class="section-padding">
         <div class="container">
             <div class="section-title">
                 <h2>バーチャル土曜市スタンプラリー</h2>
-                <p>ホームページ上でお店を３つ巡ってスタンプを集めよう！すべて集めると、実際の土曜市で使えるお楽しみクーポン（デモ）が表示されます🎁</p>
+                <p>ホームページ上でお店を巡ってスタンプを集めよう！すべて集めると、お楽しみクーポン（デモ）が表示されます🎁</p>
             </div>
             <div class="rally-box">
                 <div class="stamp-slots">
@@ -172,6 +167,31 @@
                         <p class="coupon-benefit">★ 出店店舗どこでも使える「50円引き」または「おまけ」プレゼント！</p>
                         <p class="coupon-notice">※実際の土曜市本部、または各店舗の店主さんにこの画面を見せてね！（デモ画面）</p>
                         <div class="coupon-code">CODE: NANKOKU-SAT-MARKET</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="events" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>楽しいイベント情報</h2>
+                <p>地域の小学生による発表や、地元音楽ユニットのライブなどワクワクがいっぱい！</p>
+            </div>
+            <div class="event-showcase">
+                <div class="event-card">
+                    <div class="event-tag badge-green">定期開催</div>
+                    <div class="event-body">
+                        <h3><i class="fa-solid fa-graduation-cap"></i> 地元小学生の元気発表ステージ</h3>
+                        <p>地域の小学生たちが、学校や地域で学んだことの発表や、元気いっぱいの合唱・合奏を披露してくれます！子どもたちの頑張る姿に、会場全体が温かい拍手で包まれます。</p>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-tag badge-orange">不定期開催</div>
+                    <div class="event-body">
+                        <h3><i class="fa-solid fa-music"></i> 郷土音楽ユニット アコースティックライブ</h3>
+                        <p>南国市を中心に活動するアコースティックバンドや音楽ユニットが、懐かしい名曲からオリジナルソングまでを演奏。心地よい音楽を聴きながら、のんびり朝市を楽しめます。</p>
                     </div>
                 </div>
             </div>
@@ -214,15 +234,15 @@
                 <div class="access-info-box">
                     <table class="info-table">
                         <tr>
-                            <th><i class="fa-solid fa-location-dot"></i> 開催場所</th>
-                            <td>高知県南国市 土曜市特設会場<br><span class="small-text">（※詳細な地域住所や広場名をここに記載）</span></td>
+                            <th>📍 開催場所</th>
+                            <td>高知県南国市大そね甲（南国警察署北側広場）</td>
                         </tr>
                         <tr>
-                            <th><i class="fa-solid fa-calendar-days"></i> 開催日時</th>
+                            <th>⏰ 開催日時</th>
                             <td>毎週土曜日 朝 6:00 ～ お昼 12:00頃まで<br><span class="small-text">※雨天決行（荒天を除く）、商品がなくなり次第終了となるお店もあります</span></td>
                         </tr>
                         <tr>
-                            <th><i class="fa-solid fa-car"></i> 駐車場</th>
+                            <th>🚗 駐車場</th>
                             <td><strong>大きな広い無料駐車場を完備！</strong><br>何台でもゆったり停められる広さですので、遠方からのドライブやファミリーでのご来場も安心です。</td>
                         </tr>
                     </table>
@@ -235,11 +255,6 @@
         <div class="container text-center">
             <h2>✨ 新しい出店者さん（仲間）を大募集！ ✨</h2>
             <p class="recruit-lead">南国市土曜市を一緒に盛り上げてくれる方を募集しています。お野菜、お惣菜、手芸品、フリーマーケットなど、あなた自慢の品を並べてみませんか？お店の人やお客さんとの温かい交流が待っています！</p>
-            <div class="recruit-benefits">
-                <div class="benefit-item"><i class="fa-solid fa-face-smile-wink"></i> 初心者大歓迎！</div>
-                <div class="benefit-item"><i class="fa-solid fa-handshake"></i> 抜群の地域交流</div>
-                <div class="benefit-item"><i class="fa-solid fa-circle-dollar-to-slot"></i> 出店料などお気軽にご相談</div>
-            </div>
             <button id="btn-recruit-open" class="btn-recruit-large">出店について相談してみる（お問合せ窓口）</button>
             
             <div id="recruit-form-wrapper" class="recruit-form-box hidden">
@@ -269,9 +284,8 @@
 
     <footer class="main-footer">
         <p>&copy; 2026 南国市 土曜市 活性化プロジェクト. All Rights Reserved.</p>
-        <p class="footer-sub">このホームページは、南国市土曜市の魅力発信と買い物客・出店者増加のために運営されています。</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>

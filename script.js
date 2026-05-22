@@ -5,7 +5,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     // --------------------------------------------------------------------------
-    // 1. 毎週自動調整される「次回の土曜市」カウントダウンタイマー
+    // 1. 毎週自動調整される「次回の土曜市」カウントダウンタイマー（土佐弁対応版）
     // --------------------------------------------------------------------------
     function updateCountdown() {
         const now = new Date();
@@ -21,29 +21,36 @@ document.addEventListener('DOMContentLoaded', function() {
         nextSaturday.setDate(now.getDate() + daysUntilSaturday);
         nextSaturday.setHours(6, 0, 0, 0); 
         
+        const countdownStatus = document.getElementById('countdown-status');
+        const liveStatusMessage = document.getElementById('live-status-message');
+        const countdownCard = document.querySelector('.countdown-card-wrapper');
+        
         if (dayOfWeek === 6) {
             const currentHour = now.getHours();
+            // 朝6時から昼12時までの開催中
             if (currentHour >= 6 && currentHour < 12) {
-                document.getElementById('countdown-status').innerText = "✨ 本日開催中！お急ぎください！ ✨";
-                document.getElementById('countdown-status').classList.add('active-title');
-                document.querySelector('.countdown-container').classList.add('active-market');
+                countdownStatus.innerHTML = "<span class='emoji'>✨</span> 只今元気に開催中！ <span class='emoji'>✨</span>";
+                liveStatusMessage.innerText = "✨ いま開催中ぜよ！すぐ遊びに来てね！ 🍊";
+                liveStatusMessage.classList.add('live-active');
                 
-                document.getElementById('days').innerText = "0";
+                document.getElementById('days').innerText = "00";
                 document.getElementById('hours').innerText = "00";
                 document.getElementById('minutes').innerText = "00";
                 document.getElementById('seconds').innerText = "00";
                 return;
             } 
+            // 土曜日の12時以降（来週の土曜をセット）
             else if (currentHour >= 12) {
                 nextSaturday.setDate(now.getDate() + 7);
-                document.getElementById('countdown-status').innerText = "今週分は終了しました。次回まで";
-                document.getElementById('countdown-status').classList.remove('active-title');
-                document.querySelector('.countdown-container').classList.remove('active-market');
+                countdownStatus.innerHTML = "<span class='emoji'>⏰</span> 次回の土曜市まで";
+                liveStatusMessage.innerText = "今週の土曜市は終了しました。また来週きてね！";
+                liveStatusMessage.classList.remove('live-active');
             }
         } else {
-            document.getElementById('countdown-status').innerText = "次回の土曜市スタートまで";
-            document.getElementById('countdown-status').classList.remove('active-title');
-            document.querySelector('.countdown-container').classList.remove('active-market');
+            // 平日の通常カウントダウン表示
+            countdownStatus.innerHTML = "<span class='emoji'>⏰</span> 次回の土曜市まで";
+            liveStatusMessage.innerText = "土曜日が待ち遠しいねぇ 🌸";
+            liveStatusMessage.classList.remove('live-active');
         }
 
         const diffTime = nextSaturday - now;
@@ -51,9 +58,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const d = Math.floor(diffTime / (1000 * 60 * 60 * 24));
         const h = Math.floor((diffTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const m = Math.floor((diffTime % (1000 * 60 * 60)) / (1000 * 60));
-        const s = Math.floor((diffTime % (1000 * 60)) / 1000);
+        const s = Math.floor((diffTime % (1000 * 60 * 60)) % (1000 * 60) / 1000);
         
-        document.getElementById('days').innerText = d;
+        // 常に2桁で綺麗に表示する処理
+        document.getElementById('days').innerText = d < 10 ? '0' + d : d;
         document.getElementById('hours').innerText = h < 10 ? '0' + h : h;
         document.getElementById('minutes').innerText = m < 10 ? '0' + m : m;
         document.getElementById('seconds').innerText = s < 10 ? '0' + s : s;
@@ -126,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // --------------------------------------------------------------------------
-    // 4. みんなの応援掲示板 簡易動的投稿シミュレーション
+    // 4. みんなの応援掲示板 簡易動的投稿
     // --------------------------------------------------------------------------
     const bbsForm = document.getElementById('bbs-form');
     const bbsList = document.getElementById('bbs-list');
@@ -170,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // --------------------------------------------------------------------------
-    // 5. 出店お問合せフォームのトグル表示
+    // 5. 出店お問合せフォームの開閉
     // --------------------------------------------------------------------------
     const btnRecruitOpen = document.getElementById('btn-recruit-open');
     const recruitFormWrapper = document.getElementById('recruit-form-wrapper');
@@ -178,14 +186,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     btnRecruitOpen.addEventListener('click', function() {
         recruitFormWrapper.classList.toggle('hidden');
-        if (!recruitFormWrapper.classList.contains('hidden')) {
-            recruitFormWrapper.scrollIntoView({ behavior: 'smooth' });
-        }
     });
 
     recruitForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        alert('お問合せありがとうございました！ご入力いただいた内容がデモ送信されました。（実際の運用時はサーバーやGAS等の連携が必要です）');
+        alert('出店のご相談ありがとうございます！送信シミュレーションが完了しました。');
         recruitForm.reset();
         recruitFormWrapper.classList.add('hidden');
     });
